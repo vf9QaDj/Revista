@@ -1,8 +1,15 @@
-@extends('layout')
+@extends('admin/layout')
 
 @section('content')
-<a href="posts/create">Agregar</a>
+<h1>Publicaciones</h1>
+<a href="posts/create" class="btn btn-primary">Crear una publicacion</a>
+<a href="{{ route('admin.users.index') }}" class="btn btn-info">Administrar usuarios</a>
+
+{{--<a href="posts/create">Agregar</a>--}}
+<br/><br/>
+@include('posts/partials/postfinder')
 <ul>
+	<hr/><br/>
 	@foreach($posts as $post)
 	<li>
 		<!-- <a href="posts/{{ $post->id }}">{{ $post->title }}</a> -->

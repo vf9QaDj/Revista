@@ -6,8 +6,12 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Admin' => $baseDir . '/app/models/Admin.php',
+    'AdminTableSeeder' => $baseDir . '/app/database/seeds/AdminTableSeeder.php',
     'Admin_AuthController' => $baseDir . '/app/controllers/admin/AuthController.php',
     'Admin_PostController' => $baseDir . '/app/controllers/admin/PostController.php',
+    'Admin_UsersController' => $baseDir . '/app/controllers/admin/UsersController.php',
+    'AuthController' => $baseDir . '/app/controllers/AuthController.php',
     'BaseController' => $baseDir . '/app/controllers/BaseController.php',
     'Boris\\Boris' => $vendorDir . '/d11wtq/boris/lib/Boris/Boris.php',
     'Boris\\CLIOptionsHandler' => $vendorDir . '/d11wtq/boris/lib/Boris/CLIOptionsHandler.php',

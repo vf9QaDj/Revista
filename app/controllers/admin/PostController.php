@@ -10,9 +10,18 @@ class Admin_PostController extends \BaseController {
 	public function index()
 	{
 		//en la variable $posts almacenamos todos los elementos del modelo Post, para ello se usa el metodo all() 
-		$posts = Post::all();
+		//$posts = Post::all();
+		if (Input::has('search'))
+		{
+			$posts = Post::where('title',Input::get('search'))->get();
+		}
+		else
+		{
+			$posts = Post::all();
+		}
 		//pasamos a la vista views/posts/index la variable $posts con el nombre 'posts'
 		return View::make('posts.index')->with('posts', $posts);
+		//return View::make('posts.index', compact('posts'));
 	}
 
 

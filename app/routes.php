@@ -12,7 +12,7 @@ Route::group(array('before' => 'auth'), function()
 {
 
     Route::resource('admin/posts', 'Admin_PostController');
-    Route::resource('admin/users','Admin_PostController');
+    Route::resource('admin/users','Admin_UsersController');
 
  });
  // Esta ruta nos servirá para cerrar sesión.
