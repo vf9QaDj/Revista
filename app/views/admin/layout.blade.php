@@ -17,15 +17,22 @@
   {{--tenemos que llamar al script (para el boto Eliminar) --}}
 
   <body>
-    <div id="wrap">
-      <div class="container">
-        <a href="{{ url('admin/logout') }}">Cerrar sesión.</a><br />
+    <div class="container">
+      <div class="row">
+        <img src={{ asset('assets/encabezado.png') }} style="width: 40%;height: auto;">
+      </div>
+      <div class="row">
+      </div>
+      <div id="wrap">
+
+        <a href="{{ url('admin/logout') }}">Cerrar sesión.</a><br />         
+
         @yield('content')
         <br/><hr />
         (-Footer-layout-) layout.blade.php - proyecto_en_blanco: Copyright 2013 - Todos los... reservados.
       </div>
     </div>
-    
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="//code.jquery.com/jquery.js"></script>

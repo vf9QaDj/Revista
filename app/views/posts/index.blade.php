@@ -8,6 +8,7 @@
 {{--<a href="posts/create">Agregar</a>--}}
 <br/><br/>
 @include('posts/partials/postfinder')
+
 <ul>
 	<hr/><br/>
 	@foreach($posts as $post)
@@ -18,6 +19,7 @@
 
 	</li>
 	@endforeach
-	
+	{{--Indice de paginas " < 1 2 3 > "--}}
+	{{ $posts->links() }}
 </ul>
 @stop

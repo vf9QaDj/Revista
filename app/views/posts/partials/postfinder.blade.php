@@ -4,5 +4,6 @@
 	{{--  {{ Form::select('published',[''=>'Select status','0'=>'Draft','1'=>'Published']) }}
 	{{ Form::select('menu',[''=>'Menu status','0'=>'Not in menu','1'=>'Show in menu']) }}  --}}
 	{{ Form::button('Buscar',['type'=>'submit','class'=>'btn btn-primary']) }}
-
+	<p> Se han encontrado {{ $posts->count() }} publicaciones </p>
+	
 {{ Form::close() }}
