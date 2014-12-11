@@ -66,7 +66,7 @@ return array(
 		'pgsql' => array(
 			'driver'   => 'pgsql',
 			'host'     => 'localhost',
-			'database' => 'RevistaV08',
+			'database' => 'RevistaV09',
 			'username' => 'henry',
 			'password' => 'pequeñin9',
 			'charset'  => 'utf8',

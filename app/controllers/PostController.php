@@ -9,17 +9,14 @@ class PostController extends \BaseController {
 	 */
 	public function index()
 	{
-		if (Input::has('search'))
-		{
-			$posts = Post::where('content',Input::get('search'))->get();
-		}
-		else
-		{
-			$posts = Post::all();
-		}
+		// PARA BUSCAR:
+		$posts = Post::search(Input::all());
+
+		
+
 		//pasamos a la vista views/posts/index la variable $posts con el nombre 'posts'
-		//return View::make('posts.index')->with('posts', $posts);
-		return View::make('posts.index', compact('posts');
+		return View::make('posts.index')->with('posts', $posts);
+		//return View::make('posts.index', compact('posts'));
 	}
 
 
@@ -120,6 +117,5 @@ class PostController extends \BaseController {
 		$post->delete();
 		return Redirect::to('posts');
 	}
-
 
 }

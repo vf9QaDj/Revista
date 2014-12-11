@@ -13,7 +13,7 @@
 
 App::before(function($request)
 {
-	//
+	 //
 });
 
 
@@ -32,6 +32,15 @@ App::after(function($request, $response)
 | integrates HTTP Basic authentication for quick, simple checking.
 |
 */
+//controlamos todos los roles de usuarios desde aquí
+Route::filter('roles', function($redirec,$peticion,$roles,$redirect)
+{
+  
+    $roles = explode('-', $roles);
+    if(!in_array(Auth::user()->role_id, $roles))
+        return Redirect::to($redirect);
+        
+});
 
 Route::filter('auth', function()
 {
@@ -43,11 +52,11 @@ Route::filter('auth', function()
 		}
 		else
 		{
-			return Redirect::guest('admin/login');
+			return Redirect::guest('login');
 		}
 	}
 });
-
+/*
 Route::filter('userauth', function()
 {
 	if (Auth::guest())
@@ -62,7 +71,7 @@ Route::filter('userauth', function()
 		}
 	}
 });
-
+*/
 Route::filter('auth.basic', function()
 {
 	return Auth::basic();
@@ -102,3 +111,4 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+

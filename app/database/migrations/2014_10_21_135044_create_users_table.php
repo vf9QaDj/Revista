@@ -14,6 +14,7 @@ class CreateUsersTable extends Migration {
 		// Creamos la tabla users con los campos más básicos.
         Schema::create('users',function($table){
             $table->increments('id');
+            $table->integer('role_id');
             $table->string('name',100);
             $table->string('username',100)->unique();
             $table->string('email',100)->unique();
